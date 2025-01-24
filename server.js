@@ -21,7 +21,7 @@ app.use("/api/auth", authRouter);
 app.use("/api/quiz", quizRouter);
 
 // Server start
-const PORT = 5000;
+const PORT = 3000;
 connectdb().then(() => {
     app.listen(PORT, () => {
         console.log(`Server is running on PORT: ${PORT}`);
