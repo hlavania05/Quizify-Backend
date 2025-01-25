@@ -1,6 +1,5 @@
 const mongoose = require("mongoose");
-// const URI = "mongodb://localhost:27017/quiz_admin";
-const URI = "mongodb+srv://Hlavania:hlavania05@cluster0.iyuwi.mongodb.net/";
+const URI = "${{ secrets.MONGO_URI }}";
 
 const connectdb = async () => {
   try {
