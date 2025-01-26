@@ -8,7 +8,7 @@ const connectdb = require("./utils/db");
 
 // CORS configuration
 const corsOptions = {
-    origin: "http://localhost:5173",
+    origin: "http://quizify.zapto.org",
     methods: ["GET", "POST", "DELETE"],
     credentials: true,
 };
