@@ -8,8 +8,8 @@ const connectdb = require("./utils/db");
 
 // CORS configuration
 const corsOptions = {
-    // origin: "http://quizify.zapto.org",
-    origin: "http://localhost:5173",
+    origin: "http://quizify.zapto.org",
+    // origin: "http://localhost:5173",
     methods: ["GET", "POST", "DELETE"],
     credentials: true,
 };
@@ -20,6 +20,10 @@ app.use(express.json());
 // Routers
 app.use("/api/auth", authRouter);
 app.use("/api/quiz", quizRouter);
+
+app.get('/', (req, res) => {
+    res.send('Welcome to the backend server!');
+});
 
 // Server start
 const PORT = 3000;
