@@ -17,6 +17,14 @@ const corsOptions = {
 app.use(cors(corsOptions));
 app.use(express.json());
 
+const urlLog = (req, res, next) => {
+    console.log(req.url);
+    next()
+    
+}
+
+app.use(urlLog);
+
 // Routers
 app.use("/api/auth", authRouter);
 app.use("/api/quiz", quizRouter);
@@ -29,6 +37,6 @@ app.get('/', (req, res) => {
 const PORT = 3000;
 connectdb().then(() => {
     app.listen(PORT, () => {
-        console.log(`Server is running on PORT: ${PORT}`);
+        console.log(`Server is running on PORT: http://localhost:${PORT}`);
     });
 });
